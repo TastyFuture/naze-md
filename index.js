@@ -205,7 +205,7 @@ async function startNaze() {
 	for (let i of kon) {
 	    list.push({
 	    	displayName: await naze.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await naze.getName(i + '@s.whatsapp.net')}\nFN:${await naze.getName(i + '@s.whatsapp.net')}\nORG:Owner Bot\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Do not call me\nitem2.EMAIL;type=INTERNET:Nothing\nitem2.X-ABLabel:Email\nitem3.URL:Nothing\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await naze.getName(i + '@s.whatsapp.net')}\nFN:${await naze.getName(i + '@s.whatsapp.net')}\nORG:Owner Bot\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Do not call me\nitem2.EMAIL;type=INTERNET:Nothing\nitem2.X-ABLabel:Email\nitem3.URL:Nothing\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nitem5.TEL;type=CELL:Owner Nolep\nEND:VCARD`
 	    })
 	}
 	naze.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
